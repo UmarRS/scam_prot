@@ -3,7 +3,7 @@ const shouldDisplayWarning = !sessionStorage.getItem(String(tabId));
 
 if (shouldDisplayWarning) {
   // Inject styles
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.textContent = `
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     @font-face {
@@ -148,8 +148,8 @@ if (shouldDisplayWarning) {
   document.head.appendChild(style);
 
   // Create warning screen
-  const warningScreen = document.createElement('div');
-  warningScreen.id = 'warning-screen';
+  const warningScreen = document.createElement("div");
+  warningScreen.id = "warning-screen";
   warningScreen.innerHTML = `
     <p id="scam-protect-label"><span class="material-icons">security</span>Scam Protect</p>
     <p id="warning-title">WARNING!</p>
@@ -167,14 +167,16 @@ if (shouldDisplayWarning) {
   document.body.appendChild(warningScreen);
 
   // Add event listeners to the buttons
-  document.getElementById('navigate-button').addEventListener('click', () => {
-    sessionStorage.setItem(String(tabId), 'true');
+  document.getElementById("navigate-button").addEventListener("click", () => {
+    sessionStorage.setItem(String(tabId), "true");
     warningScreen.remove();
     style.remove();
   });
 
-  document.getElementById('contact-support-button').addEventListener('click', () => {
-    // Placeholder for future functionality
-    console.log('Contact Support clicked');
-  });
+  document
+    .getElementById("contact-support-button")
+    .addEventListener("click", () => {
+      // Placeholder for future functionality
+      console.log("Contact Support clicked");
+    });
 }
