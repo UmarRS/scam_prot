@@ -15,19 +15,6 @@
       "48": "48_logo.png",
       "128": "128_logo.png"
     },
-    "web_accessible_resources": [
-      {
-        "resources": ["./styles/popup.css"],
-        "matches": ["<all_urls>"]
-      }
-    ],
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["contentScript.js"],
-        "run_at": "document_start"
-      }
-    ],
     "host_permissions": [
       "https://anydesk.com/*",
       "https://www.teamviewer.com/*",
