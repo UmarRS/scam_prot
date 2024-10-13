@@ -2,8 +2,8 @@ const tabId = chrome.tabs?.TAB_ID_CURRENT || -1;
 const shouldDisplayWarning = !sessionStorage.getItem(String(tabId));
 
 if (shouldDisplayWarning) {
-  // Inject styles
-  const style = document.createElement('style');
+  //style injection
+  const style = document.createElement("style");
   style.textContent = `
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     @font-face {
@@ -147,34 +147,34 @@ if (shouldDisplayWarning) {
   `;
   document.head.appendChild(style);
 
-  // Create warning screen
-  const warningScreen = document.createElement('div');
-  warningScreen.id = 'warning-screen';
+  //make warning screen
+  const warningScreen = document.createElement("div");
+  warningScreen.id = "warning-screen";
   warningScreen.innerHTML = `
     <p id="scam-protect-label"><span class="material-icons">security</span>Scam Protect</p>
     <p id="warning-title">WARNING!</p>
     <p id="warning-text">If someone on the phone has asked you to download this application, it may be a scam.</p>
     <p id="info-text">Legitimate companies will never ask you to download a remote desktop application</p>
     <div id="button-container">
-      <a id="learn-more-button" href="https://www.google.com" target="_blank">Learn More</a>
-      <button id="contact-support-button">Contact Support</button>
+      <a id="learn-more-button" href="http://localhost:3000/support" target="_blank">Contact Support</a>
+      <a id="learn-more-button" href="http://localhost:3000/education" target="_blank">Learn More</a>
     </div>
     <button id="navigate-button">Continue Anyway</button>
     <a id="report-link" href="https://reportfraud.ftc.gov/#/assistant" target="_blank">Report Scam to the FTC</a>
   `;
 
-  // Inject warning screen
   document.body.appendChild(warningScreen);
 
-  // Add event listeners to the buttons
-  document.getElementById('navigate-button').addEventListener('click', () => {
-    sessionStorage.setItem(String(tabId), 'true');
+  //button event listner
+  document.getElementById("navigate-button").addEventListener("click", () => {
+    sessionStorage.setItem(String(tabId), "true");
     warningScreen.remove();
     style.remove();
   });
 
-  document.getElementById('contact-support-button').addEventListener('click', () => {
-    // Placeholder for future functionality
-    console.log('Contact Support clicked');
-  });
+  document
+    .getElementById("contact-support-button")
+    .addEventListener("click", () => {
+      console.log("Contact Support clicked");
+    });
 }
