@@ -89,7 +89,7 @@ if (shouldDisplayWarning) {
 
     #navigate-button {
       padding: 10px 20px;
-      background: linear-gradient(135deg, #4ade80, #22c55e);
+      background: transparent;
       color: white;
       font-size: 20px;
       border: none;
