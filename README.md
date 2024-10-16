@@ -1,4 +1,4 @@
-![Scam Protect](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/077/443/datas/gallery.jpg)
+![Scam Protect](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/077/269/datas/gallery.jpg)
 
 # Scam Protect
 
